@@ -1,3 +1,4 @@
+import time
 while True:
     print ("1. Employee details")
     print ("2. Recoganize Face")
@@ -7,7 +8,8 @@ while True:
         import employee_detail
     elif ch==2:
         import face_recognition
-        if 0xFF == ord('q'):
-            break
-    elif ch==3:
+        #if 0xFF == ord('q'):
+            #break
+    elif ch==3:  
         break
+

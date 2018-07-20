@@ -90,7 +90,7 @@ while True:
                 alert()
                 
                 localtime = time.asctime( time.localtime(time.time()) )
-                file = open("attendance2.txt","a")
+                file = open("attendance2.csv","a")
                 id1=str(Id)
                 ir=id1[2]
                 if (ir==','):
