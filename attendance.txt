@@ -1,0 +1,9 @@
+Employee ID        Time
+
+169                Wed Jul 18 12:15:10 2018
+1                  Wed Jul 18 12:24:19 2018
+1                  Wed Jul 18 12:39:10 2018
+1                  Wed Jul 18 12:42:14 2018
+1                  Wed Jul 18 14:49:18 2018
+1                  Wed Jul 18 14:51:20 2018
+1                  Wed Jul 18 14:57:33 2018

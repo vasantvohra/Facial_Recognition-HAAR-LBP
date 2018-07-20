@@ -38,8 +38,11 @@ while(True):
         cv2.imwrite("dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
 
         # Display the video frame, with bounded rectangle on the person's face
-        cv2.imshow('frame', image_frame)
+        #cv2.imshow('frame', image_frame)
 
+
+    # Display the video frame with the bounded rectangle
+    cv2.imshow('AAPNA Attendance Monitoring System',image_frame) 
     # To stop taking video, press 'q' for at least 100ms
     if cv2.waitKey(100) & 0xFF == ord('q'):
         break

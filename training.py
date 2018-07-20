@@ -18,7 +18,7 @@ detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml");
 # Create method to get the images and label data
 def getImagesAndLabels(path):
 
-    # Get all file path
+    # Get all file path #V.imp
     imagePaths = [os.path.join(path,f) for f in os.listdir(path)] 
     
     # Initialize empty face sample

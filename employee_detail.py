@@ -77,7 +77,7 @@ def remove_record(empno):
         fin.close()
         fout.close()
     except IOError:
-        print ("no such file exists")
+        print ("no such emp id exists")
         fin.close()
     os.remove("employee.log")
     os.rename("temp.log","employee.log")
