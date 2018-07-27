@@ -6,24 +6,24 @@ class employee:
     def __init__(self):
         self.__stu_empno=0
         self.__stu_name=""
-        self.__stu_phno=""
-        self.__stu_dob="dd/mm/yyyy"
-        self.__stu_address=""
+        #self.__stu_phno=""
+        #self.__stu_dob="dd/mm/yyyy"
+        #self.__stu_address=""
         self.__stu_desig=""
         #self.__localtime=time.asctime( time.localtime(time.time()) )
     def get_detail(self):
         self.__stu_empno=int(input("Enter Employee no."))
         self.__stu_name=input("Enter Employee name")
-        self.__stu_phno=int(input("Enter Phone no."))
-        self.__stu_dob=input("Enter Date of Birth")
-        self.__stu_address=input("Enter Address")
+        #self.__stu_phno=int(input("Enter Phone no."))
+        #self.__stu_dob=input("Enter Date of Birth")
+        #self.__stu_address=input("Enter Address")
         self.__stu_desig=input("Enter designation")
     def display(self):
         print ("Employee no.: ",self.__stu_empno)
         print ("Employee name:",self.__stu_name)
-        print ("Phone no.: ",self.__stu_phno)
-        print ("Date of birth: ",self.__stu_dob)
-        print ("Address: ",self.__stu_address)
+        #print ("Phone no.: ",self.__stu_phno)
+        #print ("Date of birth: ",self.__stu_dob)
+        #print ("Address: ",self.__stu_address)
         print ("Designation: ",self.__stu_desig)
         #print ("Local current time :",self.__localtime)
     def empno(self):
@@ -33,9 +33,9 @@ class employee:
         n=int(input("enter phno."))
         if n!='.':
             self.__stu_phno=n
-        a=input("enter address")
-        if a!='.':
-            self.__stu_address=a
+        #a=input("enter address")
+        #if a!='.':
+            #self.__stu_address=a
 #function to add arecord from database
 def add_record(ob):
     t=employee()

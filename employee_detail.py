@@ -6,25 +6,25 @@ class employee:
     def __init__(self):
         self.__emp_empno=0
         self.__emp_name=""
-        self.__emp_phno=""
-        self.__emp_dob="dd/mm/yyyy"
-        self.__emp_address=""
+        #self.__emp_phno=""
+        #self.__emp_dob="dd/mm/yyyy"
+        #self.__emp_address=""
         self.__emp_desig=""
         #self.__localtime=time.asctime( time.localtime(time.time()) )
     def get_detail(self):
-        self.__emp_empno=int(input("Enter Employee no."))
-        self.__emp_name=input("Enter Employee name")
-        self.__emp_phno=int(input("Enter Phone no."))
-        self.__emp_dob=input("Enter Date of Birth")
-        self.__emp_address=input("Enter Address")
-        self.__emp_desig=input("Enter designation")
+        self.__emp_empno=int(input("Enter Employee no.: "))
+        self.__emp_name=input("Enter Employee name: ")
+        #self.__emp_phno=int(input("Enter Phone no.: "))
+        #self.__emp_dob=input("Enter Date of Birth: ")
+        #self.__emp_address=input("Enter Address: ")
+        self.__emp_desig=input("Enter designation: ")
         import newface
     def display(self):
         print ("Employee no.: ",self.__emp_empno)
         print ("Employee name:",self.__emp_name)
-        print ("Phone no.: ",self.__emp_phno)
-        print ("Date of birth: ",self.__emp_dob)
-        print ("Address: ",self.__emp_address)
+        #print ("Phone no.: ",self.__emp_phno)
+        #print ("Date of birth: ",self.__emp_dob)
+        #print ("Address: ",self.__emp_address)
         print ("Designation: ",self.__emp_desig)
         #print ("Local current time :",self.__localtime)
     def empno(self):
@@ -34,9 +34,9 @@ class employee:
         n=int(input("enter phno."))
         if n!='.':
             self.__emp_phno=n
-        a=input("enter address")
-        if a!='.':
-            self.__emp_address=a
+        #a=input("enter address")
+        #if a!='.':
+            #self.__emp_address=a
 #function to add arecord from database
 def add_record(ob):
     t=employee()
@@ -115,12 +115,12 @@ def search(empno):
         fin.close()
 # main
 while True:
-    print ("1. Add a Employee detail")
-    print ("2. Delete a Employee detail")
-    print ("3. Modify a Employee detail")
+    print ("1. Add a Employee detail ")
+    print ("2. Delete a Employee detail ")
+    print ("3. Modify a Employee detail ")
     print ("4. To display detail")
     print ("5. Go back to main menu")
-    ch=int(input("enter your choice"))
+    ch=int(input("enter your choice: "))
     if ch==1:
         f=1
         t=employee()
@@ -128,13 +128,13 @@ while True:
             t.get_detail()
             f=add_record(t)
     elif ch==2:
-        empo=int(input("enter the Employee number whose record is to be deleted"))
+        empo=int(input("enter the Employee number whose record is to be deleted: "))
         remove_record(empo)
     elif ch==3:
-        empo=int(input("enter the Employee number whose record is to be Modified"))
+        empo=int(input("enter the Employee number whose record is to be Modified: "))
         modify_record(empo)
     elif ch==4:
-        empo=int(input("enter Employee number"))
+        empo=int(input("enter Employee number: "))
         search(empo)
         
     elif ch==5:

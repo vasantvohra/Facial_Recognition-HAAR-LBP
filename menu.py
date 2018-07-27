@@ -10,6 +10,7 @@ while True:
         import face_recognition
         #if 0xFF == ord('q'):
             #break
-    elif ch==3:  
+    elif ch==3:
+        
+       # from employee_detail import employee 
         break
-

@@ -1,15 +1,20 @@
 # Import OpenCV2 for image processing
 import cv2
-import employee
+#import employee
 import pickle
 #Import numpy for matrices calculations
 import numpy as np
 import datetime
 import time
 from pygame import mixer
+import os
+import sys
+import pyttsx3
 now = datetime.datetime.now()
 Date=now.strftime("%d-%m-%Y")
 Time=now.strftime("%H:%M:%S")
+dn=now.strftime('%H')
+dn1=int(dn)
 # Create Local Binary Patterns Histograms for face recognization
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
@@ -24,7 +29,26 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 eyeCascade = cv2.CascadeClassifier(cascadePath2)
 # Set the font style
 font = cv2.FONT_HERSHEY_SIMPLEX
-
+def welcome(dn1):
+    engine = pyttsx3.init()
+    if dn1<13:
+        engine.say('Good morning ! Welcome to apna Infotech')
+        engine.runAndWait()
+    else:
+        engine.say('Good evening ! Welcome to apna Infotech')
+        engine.runAndWait() 
+def greet(i,dn1):
+    engine = pyttsx3.init()
+    s=''
+    if dn1<12:
+        engine.say('Good morning %s'%i)
+        engine.runAndWait()
+    elif dn1<17:
+        engine.say('Good afternoon %s'%i)
+        engine.runAndWait()
+    else:
+        engine.say('Good evening %s'%i)
+        engine.runAndWait()
 
 # alert sound when recoganized and saved to file
 def alert():
@@ -47,6 +71,7 @@ def attendance(Id, lt):
         print("Local current time :", lt)
         file.write("\n" + id2 + '                  ' + lt)
         alert()
+        greet(id2,dn1)
         print("ALERT!!    ATTENDANCE MARKED")
     elif (ir2 == ','):
         id2 = id1[1]+id1[2]
@@ -54,6 +79,7 @@ def attendance(Id, lt):
         print("Local current time :", lt)
         file.write("\n" + id2 + '                  ' + lt)
         alert()
+        greet(id2,dn1)
         print("ALERT!!    ATTENDANCE MARKED") 
     else:
         id2 = id1[1] + id1[2] + id1[3]
@@ -61,6 +87,7 @@ def attendance(Id, lt):
         print("EMPLOYEE ID:", id2)
         print("Local current time :", lt)
         alert()
+        greet(id2,dn1)
         print("ALERT!!    ATTENDANCE MARKED")
     file.close()
 
@@ -73,17 +100,19 @@ x = 0
 y = 0
 w = 0
 Id = ()
+k=False
+
 # Loop
 while True:
     # Read the video frame
     ret, im = cam.read()
-
+    
     # Convert the captured frame into grayscale
     gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
     # Get all face from the video frame
     faces = faceCascade.detectMultiScale(gray, 1.2, 5)
-
+    
     # For each face in faces
     for (x, y, w, h) in faces:
         # Create rectangle around the face
@@ -93,6 +122,9 @@ while True:
         # Recognize the face belongs to which ID
         Id = recognizer.predict(gray[y:y + h, x:x + w])  
         cv2.putText(im, 'Face Detected', (10, 30), font, 1, (255, 0, 0), 2)
+        if k==False:
+            welcome(dn1)
+            k=True
         ip=Id[0]
         # to detect eye in face 
         eyes = eyeCascade.detectMultiScale(roi_gray,
@@ -139,6 +171,7 @@ while True:
     cv2.imshow('AAPNA Attendance Monitoring System',im) 
 
     # If 'q' is pressed, close program
+    #if cv2.waitKey(10) & 0xFF==ord('esc'):
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
