@@ -3,7 +3,7 @@
 
 [Slide Show/PPT](https://www.slideshare.net/slideshow/embed_code/key/eDxtfA7muM7PYQ)
 #### Working: 
-![Image](https://github.com/vasantvohra/Facial_Recognition-HAAR-LBP/blob/master/mermaid%20working.PNG)
+![Image](https://raw.githubusercontent.com/vasantvohra/Facial_Recognition-HAAR-LBP/master/mermaid%20working.PNG)
 
 |       Features | Implementation |Scripts
 |----------------|-----------|-----------------------------|
@@ -36,4 +36,4 @@
 - Further data analysis on attendance reports
 
 #### Demo
-![Image](https://github.com/vasantvohra/Facial_Recognition-HAAR-LBP/blob/master/image.png)
+![Image](https://raw.githubusercontent.com/vasantvohra/Facial_Recognition-HAAR-LBP/master/image.png)
