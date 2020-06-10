@@ -19,7 +19,7 @@
 | Date Time | Date Time module|
 | Eye blink | Liveliness Detection eyeHaarCascade
 ## Setup
-```python
+```
  - clone this repo
  - git clone https://github.com/vasantvohra/Facial_Recognition-HAAR-LBP.git
  - pip install -r requirements.txt
